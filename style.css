@@ -1,0 +1,146 @@
+@import url('https://fonts.googleapis.com/css2?family=Mukta&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --btn-font: 'Mukta', sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    position: relative;
+    background: linear-gradient(to bottom, #3b1f44, #3a024f);
+    font-family: var(--btn-font);
+}
+
+.btn-container {
+    display: flex;
+    width: 1000px;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.btn-container .btn {
+    position: relative;
+    top: 0;
+    left: 0;
+    height: 50px;
+    width: 200px;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-container .btn a {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.05);
+    box-shadow: 0 12px 12px rgba(0, 0, 0, 0.3);
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 30px;
+    padding: 11px;
+    color: #fff;
+    font-weight: 500;
+    letter-spacing: 2px;
+    text-decoration: none;
+    transition: 0.3s;
+    backdrop-filter: blur(90px);
+    overflow: hidden;
+    z-index: 1;
+}
+
+.btn-container .btn:hover a {
+    letter-spacing: 4px;
+}
+
+.btn-container .btn a::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 50%;
+    background: linear-gradient(to left, rgba(255, 255, 255, 0.15), transparent);
+    transform: skewX(45deg) translate(0);
+    transition: 0.3s;
+    filter: blur(1px);
+}
+
+.btn-container .btn:hover a::before {
+    transform: skewX(45deg) translate(150px);
+}
+
+.btn-container .btn::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 10px;
+    width: 30px;
+    bottom: -5px;
+    background: rgb(253, 4, 4);
+    border-radius: 30px;
+    transition: 0.3s;
+    transition-delay: 0.3;
+}
+
+.btn-container .btn:hover::before {
+    bottom: 0;
+    height: 50%;
+    width: 80%;
+    border-radius: 30px;
+}
+
+.btn-container .btn::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: -5px;
+    height: 10px;
+    width: 30px;
+    background: rgb(253, 4, 4);
+    border-radius: 30px;
+    transition: 0.3s;
+    transition-delay: 0.3;
+}
+
+.btn-container .btn:hover::after {
+    top: 0;
+    height: 45%;
+    width: 85%;
+    border-radius: 30px;
+}
+
+.btn-container .btn:nth-child(1)::before,
+.btn-container .btn:nth-child(1)::after {
+    background: #ff1f71;
+    box-shadow: 0 0 5px #ff1f77, 0 0 15px #ff1f77, 0 0 30px #ff1f77, 0 0 50px #ff1f77;
+}
+
+.btn-container .btn:nth-child(2)::before,
+.btn-container .btn:nth-child(2)::after {
+    background: #23ff47;
+    box-shadow: 0 0 5px #23ff47, 0 0 15px #23ff47, 0 0 30px #23ff47, 0 0 50px #23ff47;
+}
+
+.btn-container .btn:nth-child(3)::before,
+.btn-container .btn:nth-child(3)::after {
+    background: #2caefa;
+    box-shadow: 0 0 5px #2caefa, 0 0 15px #2caefa, 0 0 30px #2caefa, 0 0 50px #2caefa;
+}
